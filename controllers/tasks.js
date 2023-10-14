@@ -8,6 +8,8 @@ const getAllTasks = async (req, res) => {
         res.status(500).json({message: error})
     }
 }
+
+
 const getTask = async (req, res) => {
     try {
         const {id:taskID} = req.params;
