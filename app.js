@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const cors = require('cors');
 const tasks = require('./routes/tasks');
 const connectDB = require('./db/connect');
 const notFound = require('./middleware/not-found');
@@ -8,6 +9,8 @@ require('dotenv').config()
 
 
 //Middleware
+app.use(express.static('./public'));
+app.use(cors());
 app.use(express.json());
 
 //Routes
